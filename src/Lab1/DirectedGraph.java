@@ -1,16 +1,35 @@
 package Lab1;
-
-import java.util.*;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.util.*;
+import org.graphstream.graph.*;
+import org.graphstream.graph.implementations.*;
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.SingleGraph;
 
 public class DirectedGraph {
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
+    private Graph graphPicture = new SingleGraph("DirectedGraph");
 
+    /*没有节点名称的有向图
+    public void createGraphPictureFromText() {
+
+        for (String node : graph.keySet()) {
+            graphPicture.addNode(node);
+        }
+        for (String node : graph.keySet()) {
+            Map<String, Integer> neighbors = graph.get(node);
+            for (Map.Entry<String, Integer> entry : neighbors.entrySet()) {
+                String neighborNode = entry.getKey();
+                graphPicture.addEdge(node + neighborNode, node, neighborNode, true);
+            }
+        }
+    }
+    // 可视化有向图
+    public void visualizeGraph() {
+        System.setProperty("org.graphstream.ui", "swing");
+        graphPicture.display();
+    }
+*/
     // 将文本转化为有向图
     public void createGraphFromText(String text) {
         String[] words = text.toLowerCase().split("\\s+"); // 将文本分割成单词数组
@@ -33,5 +52,15 @@ public class DirectedGraph {
             }
             System.out.println();
         }
+    }
+    /*判断swing是否可用*/
+    public static void CheckSwing() {
+        JFrame frame = new JFrame("Check Swing");
+        frame.setSize(200, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+    public  Map<String, Map<String, Integer>> getGraph () {
+       return graph;
     }
 }

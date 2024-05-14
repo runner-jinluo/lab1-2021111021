@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         // 假设文件路径是固定的，或者你可以从用户那里获取它
-        String filePath = "D:\\desktop\\Java\\test\\data\\text.txt"; // 替换为你的文件路径
+        String filePath = "src/data/data.txt"; // 替换为你的文件路径
         String finalText = "";
        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             StringBuilder processedText = new StringBuilder();
@@ -68,7 +68,8 @@ public class Main {
                     }
                     break;
                 case 5: //功能5
-
+                    RandomGraphTraversal randomwalk = new RandomGraphTraversal(graph);
+                    randomwalk.randomGraphTraversal();
                     break;
                 case 6: //功能6
                     return;

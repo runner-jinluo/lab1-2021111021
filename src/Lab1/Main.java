@@ -55,7 +55,11 @@ public class Main {
                     Scanner scanner = new Scanner(System.in);
                     System.out.print("请输入文本：");
                     String inputText = scanner.nextLine();
+<<<<<<< HEAD
                     String outputText = bridgeWordsFinder.generateNewText(inputText);
+=======
+                    String outputText = bridgeWordsFinder.generateBridgeWords(inputText);
+>>>>>>> refs/remotes/origin/master
                     System.out.println("Input Text: " + inputText);
                     System.out.println("Output Text: " + outputText);
                     break;

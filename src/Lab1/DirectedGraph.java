@@ -8,7 +8,11 @@ import org.graphstream.graph.implementations.SingleGraph;*/
 
 public class DirectedGraph {
     //private Graph graphPicture = new SingleGraph("DirectedGraph");
+<<<<<<< HEAD
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
+=======
+
+>>>>>>> refs/remotes/origin/master
     /*没有节点名称的有向图
     public void createGraphPictureFromText() {
 

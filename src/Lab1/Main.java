@@ -47,8 +47,28 @@ public class Main {
                 case 3: //功能3
                     break;
                 case 4: //功能4
+                    DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("请输入起点单词:");
+                    String start = scanner.nextLine();
+                    System.out.println("请输入终点单词:");
+                    String end = scanner.nextLine();
+                    if (end.equals("#")) {
+                        Map<String, String> allShortestPaths = dijkstra.findAllShortestPaths(start);
+                        allShortestPaths.forEach((endpoint, path) -> {
+                            if (path.equals("不可达")) {
+                                System.out.println(start + " 到 " + endpoint + " " + "不可达");
+                            } else {
+                                System.out.println("从 " + start + " 到 " + endpoint + " 的最短路径为: " + path);
+                            }
+                        });
+                    } else {
+                        String shortestPath = dijkstra.findShortestPath(start, end);
+                        System.out.println(shortestPath.equals("不可达") ? "不可达" : "最短路径为: " + shortestPath);
+                    }
                     break;
                 case 5: //功能5
+
                     break;
                 case 6: //功能6
                     return;

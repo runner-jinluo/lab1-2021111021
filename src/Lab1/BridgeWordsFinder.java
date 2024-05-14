@@ -22,7 +22,7 @@ public class BridgeWordsFinder {
         }
 
         // 寻找桥接词
-        List<String> bridgeWords = findBridgeWords(graph, word1, word2);
+        List<String> bridgeWords = queryBridgeWords( word1, word2);
 
         // 输出结果
         if (bridgeWords.isEmpty()) {
@@ -38,9 +38,8 @@ public class BridgeWordsFinder {
     }
 
     // 寻找桥接词
-    private static List<String> findBridgeWords(Map<String, Map<String, Integer>> graph, String word1, String word2) {
+    private  List<String> queryBridgeWords(String word1, String word2) {
         List<String> bridgeWords = new ArrayList<>();
-
         // 遍历word1的所有邻居节点，查找共同的邻居作为桥接词
         Map<String, Integer> neighborsOfWord1 = graph.get(word1);
         if (neighborsOfWord1 != null) {
@@ -53,7 +52,7 @@ public class BridgeWordsFinder {
         return bridgeWords;
     }
 
-    public String generateBridgeWords(String text) {
+    public String generateNewText(String text) {
         StringBuilder result = new StringBuilder();
         String[] words = text.split("\\s+");
 
@@ -65,7 +64,7 @@ public class BridgeWordsFinder {
             result.append(word1).append(" ");
 
             // Check if there are bridge words between word1 and word2
-            List<String> bridgeWords = findBridgeWords(graph,word1, word2);
+            List<String> bridgeWords = queryBridgeWords(word1, word2);
             if (!bridgeWords.isEmpty()) {
                 // Randomly select one bridge word to insert between word1 and word2
                 String bridge = bridgeWords.get(rand.nextInt(bridgeWords.size()));

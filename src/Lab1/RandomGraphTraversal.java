@@ -13,7 +13,7 @@ public class RandomGraphTraversal {
         this.graph = graphGraph.getGraph();
     }
 
-    public void randomGraphTraversal() {
+    public void randomWalk() {
         // 随机选择起点
         List<String> nodes = new ArrayList<>(graph.keySet());
         String startNode = nodes.get(new Random().nextInt(nodes.size()));

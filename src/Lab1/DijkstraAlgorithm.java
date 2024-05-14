@@ -10,7 +10,7 @@ public class DijkstraAlgorithm {
         this.graph = graphGraph.getGraph();
     }
 
-    public  String findShortestPath(String start, String end) {
+    public  String calcShortestPath(String start, String end) {
         Set<String> settledNodes = new HashSet<>();
         Set<String> unsettledNodes = new HashSet<>();
         Map<String, Integer> distances = new HashMap<>();

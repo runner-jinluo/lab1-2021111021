@@ -44,7 +44,7 @@ public class Main {
                 case 1: //功能1
                     /*graph.createGraphPictureFromText();
                     graph.visualizeGraph();*/
-                    graph.printGraph();
+                    graph.showDirectedGraph(graph.getGraph());
                     //DirectedWeightedGraphVisualization visualization = new DirectedWeightedGraphVisualization(graph.graph);
                     //visualization.visualize();
                     break;
@@ -55,7 +55,7 @@ public class Main {
                     Scanner scanner = new Scanner(System.in);
                     System.out.print("请输入文本：");
                     String inputText = scanner.nextLine();
-                    String outputText = bridgeWordsFinder.generateBridgeWords(inputText);
+                    String outputText = bridgeWordsFinder.generateNewText(inputText);
                     System.out.println("Input Text: " + inputText);
                     System.out.println("Output Text: " + outputText);
                     break;
@@ -76,13 +76,13 @@ public class Main {
                             }
                         });
                     } else {
-                        String shortestPath = dijkstra.findShortestPath(start, end);
+                        String shortestPath = dijkstra.calcShortestPath(start, end);
                         System.out.println(shortestPath.equals("不可达") ? "不可达" : "最短路径为: " + shortestPath);
                     }
                     break;
                 case 5: //功能5
                     RandomGraphTraversal randomwalk = new RandomGraphTraversal(graph);
-                    randomwalk.randomGraphTraversal();
+                    randomwalk.randomWalk();
                     break;
                 case 6: //功能6
                     return;

@@ -7,9 +7,8 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;*/
 
 public class DirectedGraph {
-    private Map<String, Map<String, Integer>> graph = new HashMap<>();
     //private Graph graphPicture = new SingleGraph("DirectedGraph");
-
+    private Map<String, Map<String, Integer>> graph = new HashMap<>();
     /*没有节点名称的有向图
     public void createGraphPictureFromText() {
 
@@ -43,10 +42,10 @@ public class DirectedGraph {
     }
 
     // 打印有向图
-    public void printGraph() {
-        for (String word : graph.keySet()) {
+    public void showDirectedGraph(Map<String, Map<String, Integer>> graph1) {
+        for (String word : graph1.keySet()) {
             System.out.print(word + " -> ");
-            Map<String, Integer> edges = graph.get(word);
+            Map<String, Integer> edges = graph1.get(word);
             for (String adjacentWord : edges.keySet()) {
                 System.out.print(adjacentWord + "(" + edges.get(adjacentWord) + ") ");
             }

@@ -45,7 +45,6 @@ public class RandomGraphTraversal {
         }
         path.add(currentNode); // 记录最后一个节点
         // 输出遍历的边
-        System.out.println("遍历的路径: " + String.join(", ", visitedEdges));
         System.out.println("遍历的节点: " + String.join(" ", path));
         // 将遍历的边写入文件
         writeToFile(path);

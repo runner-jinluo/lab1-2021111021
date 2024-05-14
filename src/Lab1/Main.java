@@ -25,8 +25,10 @@ public class Main {
         } catch (IOException e) {
             System.err.println("无法读取文件: " + e.getMessage());
         }
+
         DirectedGraph graph = new DirectedGraph();
         graph.createGraphFromText(finalText);
+        BridgeWordsFinder bridgeWordsFinder = new BridgeWordsFinder(graph);
 
         Scanner input = new Scanner(System.in);
         while(true) {
@@ -40,19 +42,30 @@ public class Main {
             int choice = input.nextInt();
             switch (choice) {
                 case 1: //功能1
+                    /*graph.createGraphPictureFromText();
+                    graph.visualizeGraph();*/
                     graph.printGraph();
+                    //DirectedWeightedGraphVisualization visualization = new DirectedWeightedGraphVisualization(graph.graph);
+                    //visualization.visualize();
                     break;
                 case 2: //功能2
+                    bridgeWordsFinder.WordsFinder();
                     break;
                 case 3: //功能3
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.print("请输入文本：");
+                    String inputText = scanner.nextLine();
+                    String outputText = bridgeWordsFinder.generateBridgeWords(inputText);
+                    System.out.println("Input Text: " + inputText);
+                    System.out.println("Output Text: " + outputText);
                     break;
                 case 4: //功能4
                     DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
-                    Scanner scanner = new Scanner(System.in);
+                    Scanner scanner_4 = new Scanner(System.in);
                     System.out.println("请输入起点单词:");
-                    String start = scanner.nextLine();
+                    String start = scanner_4.nextLine();
                     System.out.println("请输入终点单词:");
-                    String end = scanner.nextLine();
+                    String end = scanner_4.nextLine();
                     if (end.equals("#")) {
                         Map<String, String> allShortestPaths = dijkstra.findAllShortestPaths(start);
                         allShortestPaths.forEach((endpoint, path) -> {

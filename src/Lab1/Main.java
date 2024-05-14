@@ -32,7 +32,6 @@ public class Main {
         DirectedGraph graph = new DirectedGraph();
         graph.createGraphFromText(finalText);
         BridgeWordsFinder bridgeWordsFinder = new BridgeWordsFinder(graph);
-        Scanner input = new Scanner(System.in);
         //graph.CheckSwing();
 
         while(true) {
@@ -43,9 +42,9 @@ public class Main {
             System.out.println("4.计算最短路径");
             System.out.println("5.随机游走");
             System.out.println("6.退出");
+            Scanner input = new Scanner(System.in);
             //Scanner input = new Scanner(System.in);
             int choice = input.nextInt();
-            //Scanner.close();
             switch (choice) {
                 case 1: //功能1
                     /*graph.createGraphPictureFromText();
@@ -62,7 +61,6 @@ public class Main {
                     System.out.print("请输入文本：");
                     String inputText = scanner.nextLine();
                     System.out.println("您输入的文本是：" + inputText);
-                    scanner.close();
                     String outputText = bridgeWordsFinder.generateBridgeWords(inputText);
                     System.out.println("Input Text: " + inputText);
                     System.out.println("Output Text: " + outputText);

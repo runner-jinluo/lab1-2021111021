@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
         // 假设文件路径是固定的，或者你可以从用户那里获取它
         String filePath = "src/data/data.txt"; // 替换为你的文件路径
         String finalText = "";
@@ -30,7 +30,7 @@ public class Main {
         graph.createGraphFromText(finalText);
         BridgeWordsFinder bridgeWordsFinder = new BridgeWordsFinder(graph);
 
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         while(true) {
             System.out.println("选择你要的功能");
             System.out.println("1.打印有向图");
@@ -39,7 +39,19 @@ public class Main {
             System.out.println("4.计算最短路径");
             System.out.println("5.随机游走");
             System.out.println("6.退出");
-            int choice = input.nextInt();
+            int choice;
+            while (true) {
+                while (!scanner.hasNextInt()) {
+                    System.out.println("请输入一个整数:");
+                    scanner.next(); // 清除缓冲区
+                }
+                choice = scanner.nextInt();
+                if (choice >= 1 && choice <= 6) {
+                    break; // 输入合法，退出循环
+                } else {
+                    System.out.println("输入不在1到6之间，请重新输入:");
+                }
+            }
             switch (choice) {
                 case 1: //功能1
                     graph.createGraphPictureFromText();
@@ -52,9 +64,9 @@ public class Main {
                     bridgeWordsFinder.WordsFinder();
                     break;
                 case 3: //功能3
-                    Scanner scanner = new Scanner(System.in);
+                    Scanner input = new Scanner(System.in);
                     System.out.print("请输入文本：");
-                    String inputText = scanner.nextLine();
+                    String inputText = input.nextLine();
                     String outputText = bridgeWordsFinder.generateNewText(inputText);
                     System.out.println("Input Text: " + inputText);
                     System.out.println("Output Text: " + outputText);

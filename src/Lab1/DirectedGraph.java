@@ -7,8 +7,8 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import org.graphstream.ui.view.Viewer;
-import org.graphstream.ui.view.ViewerPipe;
+//import org.graphstream.ui.view.Viewer;
+//import org.graphstream.ui.view.ViewerPipe;
 
 public class DirectedGraph {
     private Graph graphPicture = new SingleGraph("DirectedGraph");

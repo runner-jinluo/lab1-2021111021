@@ -19,16 +19,19 @@ public class DijkstraAlgorithm {
         distances.put(start, 0);
         unsettledNodes.add(start);
 
-        while (unsettledNodes.size() != 0) {
+        while (!unsettledNodes.isEmpty()) {
             String currentNode = getLowestDistanceNode(unsettledNodes, distances);
             unsettledNodes.remove(currentNode);
-            for (Map.Entry<String, Integer> adjacencyPair : graph.get(currentNode).entrySet()) {
-                String adjacentNode = adjacencyPair.getKey();
-                Integer edgeWeight = adjacencyPair.getValue();
+            Map<String, Integer> adjacencies = graph.get(currentNode);
+            if (adjacencies != null) { // Check if the currentNode exists in the graph
+                for (Map.Entry<String, Integer> adjacencyPair : adjacencies.entrySet()) {
+                    String adjacentNode = adjacencyPair.getKey();
+                    Integer edgeWeight = adjacencyPair.getValue();
 
-                if (!settledNodes.contains(adjacentNode)) {
-                    calculateMinimumDistance(adjacentNode, edgeWeight, currentNode, distances, predecessors);
-                    unsettledNodes.add(adjacentNode);
+                    if (!settledNodes.contains(adjacentNode)) {
+                        calculateMinimumDistance(adjacentNode, edgeWeight, currentNode, distances, predecessors);
+                        unsettledNodes.add(adjacentNode);
+                    }
                 }
             }
             settledNodes.add(currentNode);

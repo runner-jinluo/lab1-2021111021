@@ -1,1 +1,2 @@
 a message from B2
+B2 reporting

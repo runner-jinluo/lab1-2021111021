@@ -1,4 +1,4 @@
-package Lab1;
+ package Lab1;
 import java.util.*;
 import java.io.FileWriter;
 import java.io.File;

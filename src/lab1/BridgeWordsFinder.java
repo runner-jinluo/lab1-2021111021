@@ -1,9 +1,10 @@
-package Lab1;
+package lab1;
 
 import java.util.*;
 
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocType"})
 public class BridgeWordsFinder {
-    private Map<String, Map<String, Integer>> graph = new HashMap<>();
+    private static Map<String, Map<String, Integer>> graph = new HashMap<>();
     public BridgeWordsFinder(DirectedGraph graphGraph) {
         this.graph = graphGraph.getGraph();
     }
@@ -38,7 +39,7 @@ public class BridgeWordsFinder {
     }
 
     // 寻找桥接词
-    private  List<String> queryBridgeWords(String word1, String word2) {
+    public static List<String> queryBridgeWords(String word1, String word2) {
         List<String> bridgeWords = new ArrayList<>();
         // 遍历word1的所有邻居节点，查找共同的邻居作为桥接词
         Map<String, Integer> neighborsOfWord1 = graph.get(word1);

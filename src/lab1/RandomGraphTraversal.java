@@ -1,11 +1,12 @@
-package Lab1;
-import java.util.*;
-import java.io.FileWriter;
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.io.BufferedWriter;
+package lab1;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+
+@SuppressWarnings("checkstyle:Indentation")
 public class RandomGraphTraversal {
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
 

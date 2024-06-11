@@ -1,21 +1,5 @@
-package Lab1;
+package lab1;
 
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
-import org.graphstream.graph.*;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.swing.*;
-import java.io.File;
-import java.util.*;
-import org.graphstream.graph.*;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.util.*;
 
 public class DijkstraAlgorithm {
@@ -26,6 +10,7 @@ public class DijkstraAlgorithm {
         this.graph = graphGraph.getGraph();
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     public  String calcShortestPath(String start, String end) {
         Set<String> settledNodes = new HashSet<>();
         Set<String> unsettledNodes = new HashSet<>();

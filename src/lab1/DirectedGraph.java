@@ -1,19 +1,19 @@
-package Lab1;
-import javax.swing.*;
-import java.io.File;
+package lab1;
 import java.util.*;
 import org.graphstream.graph.*;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 //import org.graphstream.ui.view.Viewer;
 //import org.graphstream.ui.view.ViewerPipe;
 
+@SuppressWarnings("checkstyle:MissingJavadocType")
 public class DirectedGraph {
-    private Graph graphPicture = new SingleGraph("DirectedGraph");
+    @SuppressWarnings("checkstyle:Indentation")
+    private final Graph graphPicture = new SingleGraph("DirectedGraph");
+    @SuppressWarnings("checkstyle:Indentation")
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
     //没有节点名称的有向图
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:EmptyLineSeparator"})
     public void createGraphPictureFromText() {
 
         for (String node : graph.keySet()) {
@@ -35,6 +35,7 @@ public class DirectedGraph {
         }
     }
     // 可视化有向图
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:OperatorWrap", "checkstyle:WhitespaceAround"})
     public void visualizeGraph() {
         Graph graph = new SingleGraph("MyGraph");
         System.setProperty("org.graphstream.ui", "swing");
@@ -59,6 +60,7 @@ public class DirectedGraph {
     }
 
     // 将文本转化为有向图
+    @SuppressWarnings("checkstyle:Indentation")
     public void createGraphFromText(String text) {
         String[] words = text.toLowerCase().split("\\s+"); // 将文本分割成单词数组
         for (int i = 0; i < words.length - 1; i++) {
@@ -71,6 +73,7 @@ public class DirectedGraph {
     }
 
     // 打印有向图
+    @SuppressWarnings("checkstyle:Indentation")
     public void showDirectedGraph(Map<String, Map<String, Integer>> graph1) {
         for (String word : graph1.keySet()) {
             System.out.print(word + " -> ");
@@ -81,13 +84,8 @@ public class DirectedGraph {
             System.out.println();
         }
     }
-    /*判断swing是否可用*/
-    public static void CheckSwing() {
-        JFrame frame = new JFrame("Check Swing");
-        frame.setSize(200, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
+
+    @SuppressWarnings("checkstyle:Indentation")
     public  Map<String, Map<String, Integer>> getGraph () {
         return graph;
     }

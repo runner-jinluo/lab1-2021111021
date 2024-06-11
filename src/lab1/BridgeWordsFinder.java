@@ -1,7 +1,8 @@
-package Lab1;
+package lab1;
 
 import java.util.*;
 
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocType"})
 public class BridgeWordsFinder {
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
     public BridgeWordsFinder(DirectedGraph graphGraph) {

@@ -1,11 +1,15 @@
-package Lab1;
+package lab1;
 
+import java.util.*;
 import java.util.Scanner;
 import java.io.*;
-import java.util.*;
 
 public class Main {
-
+    /**
+     * Main method 主函数
+     * @param args null
+     */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:WhitespaceAfter"})
     public static void  main(String[] args) {
         // 假设文件路径是固定的，或者你可以从用户那里获取它
         String filePath = "src/data/data.txt"; // 替换为你的文件路径
@@ -31,7 +35,7 @@ public class Main {
         BridgeWordsFinder bridgeWordsFinder = new BridgeWordsFinder(graph);
 
         Scanner scanner = new Scanner(System.in);
-        while(true) {
+        while (true) {
             System.out.println("选择你要的功能");
             System.out.println("1.打印有向图");
             System.out.println("2.查询桥接词");
@@ -73,11 +77,11 @@ public class Main {
                     break;
                 case 4: //功能4
                     DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
-                    Scanner scanner_4 = new Scanner(System.in);
+                    Scanner scanner4 = new Scanner(System.in);
                     System.out.println("请输入起点单词:");
-                    String start = scanner_4.nextLine();
+                    String start = scanner4.nextLine();
                     System.out.println("请输入终点单词:");
-                    String end = scanner_4.nextLine();
+                    String end = scanner4.nextLine();
                     if (end.equals("#")) {
                         Map<String, String> allShortestPaths = dijkstra.findAllShortestPaths(start);
                         allShortestPaths.forEach((endpoint, path) -> {
